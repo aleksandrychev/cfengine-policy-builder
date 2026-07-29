@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "types": ["node", "vite/client", "vitest/globals", "@testing-library/jest-dom"]
+  },
+  "include": ["src/renderer/**/*", "src/preload/*.d.ts"],
+  // The Mission Portal theme is vendored verbatim and is transpile-only (see
+  // src/renderer/src/types/theme.d.ts). Exclude it from the strict type check;
+  // the app consumes it through the `@renderer/theme` typed boundary instead.
+  "exclude": ["src/renderer/src/theme/**"]
+}
